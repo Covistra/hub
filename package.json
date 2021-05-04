@@ -1,0 +1,12 @@
+{
+  "name": "@covistra/service-hub",
+  "version": "1.0.0",
+  "main": "./src/main.js",
+  "dependencies": {
+    "conveyor-mq": "^0.0.37",
+    "ioredis": "^4.27.1",
+    "luxon": "^1.26.0",
+    "rxjs": "^7.0.0",
+    "shortid-36": "^0.1.2"
+  }
+}

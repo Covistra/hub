@@ -1,5 +1,5 @@
 {
-  "name": "@covistra/service-hub",
+  "name": "@covistra/hub",
   "version": "1.0.0",
   "main": "./src/main.js",
   "dependencies": {
@@ -8,5 +8,8 @@
     "luxon": "^1.26.0",
     "rxjs": "^7.0.0",
     "shortid-36": "^0.1.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }

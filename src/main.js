@@ -5,7 +5,7 @@ const { DateTime } = require("luxon");
 const shortid = require("shortid-36");
 
 module.exports = function hubFactory(opts = {}) {
-  const redisConfig = { host: opts.host || process.env.REDIS_HOST || "localhost", port: opts.port || process.env.REDIS_PORT || 6379 };
+  const redisConfig = { host: opts.host || process.env.REDIS_SERVICE_HOST || "localhost", port: opts.port || process.env.REDIS_SERVICE_PORT || 6379 };
 
   return {
     Queue: function (name) {

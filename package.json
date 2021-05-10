@@ -1,6 +1,6 @@
 {
   "name": "@covistra/hub",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./src/main.js",
   "dependencies": {
     "conveyor-mq": "^0.0.37",

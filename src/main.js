@@ -9,6 +9,9 @@ module.exports = function hubFactory(opts = {}) {
 
   return {
     Queue: function (name) {
+      if (Array.isArray(name)) {
+        name = name.join("/");
+      }
       const manager = createManager({
         queue: name,
         redisConfig,
@@ -65,7 +68,10 @@ module.exports = function hubFactory(opts = {}) {
       };
     },
     Channel: function (key, opts = {}) {
-      console.log("creating channel");
+      if (Array.isArray(key)) {
+        key = key.join("/");
+      }
+      console.log("creating channel", key);
 
       const pub = new Redis(opts.url);
       const sub = new Redis();

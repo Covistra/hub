@@ -81,6 +81,10 @@ module.exports = function hubFactory(opts = {}) {
           return pub.publish(key, JSON.stringify(data));
         },
         listener(pattern, fn) {
+          if (!fn) {
+            fn = pattern;
+            pattern = key;
+          }
           sub.psubscribe(pattern);
           if (fn) {
             return new Observable(function channelObserver(obs) {

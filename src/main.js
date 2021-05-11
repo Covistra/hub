@@ -71,7 +71,6 @@ module.exports = function hubFactory(opts = {}) {
       if (Array.isArray(key)) {
         key = key.join("/");
       }
-      console.log("creating channel", key);
 
       const pub = new Redis(opts.url);
       const sub = new Redis();
@@ -87,10 +86,8 @@ module.exports = function hubFactory(opts = {}) {
           }
           sub.psubscribe(pattern);
           if (fn) {
-            return new Observable(function channelObserver(obs) {
-              sub.on("pmessage", (pattern, channel, message) => {
-                fn(JSON.parse(message), { pattern, channel });
-              });
+            sub.on("pmessage", (pattern, channel, message) => {
+              fn(JSON.parse(message), { pattern, channel });
             });
           } else {
             return new Observable(function channelObserver(obs) {

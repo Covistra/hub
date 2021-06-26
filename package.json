@@ -1,6 +1,6 @@
 {
   "name": "@covistra/hub",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "./src/main.js",
   "dependencies": {
     "bluebird": "^3.7.2",

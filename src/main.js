@@ -76,8 +76,8 @@ module.exports = function hubFactory(opts = {}) {
       const sub = new Redis();
 
       return {
-        publish(data) {
-          return pub.publish(key, JSON.stringify(data));
+        publish(data, suffix) {
+          return pub.publish(suffix ? `${key}${suffix}` : key, JSON.stringify(data));
         },
         listener(pattern, fn) {
           if (!fn) {
